@@ -32,8 +32,8 @@ public class PoS {
         return pos1.sales.equals(pos2.sales);
     }
 
-    public int totalSales(PoS pos1) {
-        return pos1.sales.SalesTotal();
+    public int totalSales() {
+        return this.sales.SalesTotal();
     }
 
     public int nbPrepaiCard() {
@@ -133,7 +133,7 @@ public class PoS {
 
 
     public String salesBreakdown() {
-        return sales.toString() + ", sales total is: " + sales.SalesTotal();
+        return sales.toString();
     }
 }
 

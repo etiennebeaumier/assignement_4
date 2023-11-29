@@ -16,6 +16,7 @@ public class PoSDemo {
         int expDay, expMonth, add_jun, add_teen, add_med, add_big, add_fam, choice;
         PrePaiCard card;
 
+
         System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         System.out.println("| \tWelcome to Concordia CostLessBites Catering Sales Counter Application       |");
         System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
@@ -51,6 +52,7 @@ public class PoSDemo {
         PoS pos3 = new PoS(sales2, cards3); // Different sales configuration, same total $ amount as pos1
         PoS pos4 = new PoS(sales3, cards4); // Same sales as PoS 5, no prepaid cards
         PoS pos5 = new PoS(new Sales(sales3), cards5); // Clone to ensure separate objects
+        PoS[] allPoSs = {pos1, pos2, pos3, pos4, pos5};
 
 
         while (true) {
@@ -109,13 +111,40 @@ public class PoSDemo {
 
                     break;
                 case 3:
-                    System.out.println("List of PoSs with same total $ Sales");
+                    System.out.println("List of PoSs with same total $ Sales: \n");
 
 
+                    for (int i = 0; i < allPoSs.length; i++) {
+                        for (int j = i + 1; j < allPoSs.length; j++) {
+                            if (allPoSs[i].equalValue(allPoSs[j])) {
+                                System.out.println("PoS " + (i + 1) + " and PoS " + (j + 1) +
+                                        " both have " +
+                                        allPoSs[i].totalSales());
+                            }
+                        }
+                    }
+                    System.out.println();
                     break;
                 case 4:
+                    System.out.println("List of PoSs with same Sales categories:\n");
+                    for (int i = 0; i < allPoSs.length; i++) {
+                        for (int j = i + 1; j < allPoSs.length; j++) {
+                            if (allPoSs[i].equalQty(allPoSs[i], allPoSs[j])) {
+                                System.out.println("PoS " + (i + 1) + " and PoS " + (j + 1) + " both have " + allPoSs[i].salesBreakdown());
+                            }
+                        }
+                    }
                     break;
                 case 5:
+                    System.out.println("List of PoSs with same $ amount of sales and same number of Prepaid cards:\n");
+                    for (int i = 0; i < allPoSs.length; i++) {
+                        for (int j = i + 1; j < allPoSs.length; j++) {
+                            if (allPoSs[i].equalValue(allPoSs[j]) && allPoSs[i].nbPrepaiCard() == allPoSs[j].nbPrepaiCard()) {
+                                System.out.println("PoS " + (i + 1) + " and PoS " + (j + 1));
+                            }
+                        }
+                    }
+                    System.out.println();
                     break;
                 case 6:
                     System.out.println();
