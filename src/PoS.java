@@ -17,11 +17,7 @@ public class PoS {
     public PoS(Sales sales, PrePaiCard[] prePaiCard) {
         this.sales = sales;
 
-        if (prePaiCard != null) {
-            this.prePaiCards = prePaiCard;
-        } else {
-            this.prePaiCards = null;
-        }
+        this.prePaiCards = prePaiCard;
     }
 
     public boolean equalValue(PoS pos) {
