@@ -69,11 +69,11 @@ public class PoSDemo {
                     System.out.println();
                     System.out.println("Content of each PoS:\n" +
                             "---------------------");
-                    System.out.println(pos1.toString());
-                    System.out.println(pos2.toString());
-                    System.out.println(pos3.toString());
-                    System.out.println(pos4.toString());
-                    System.out.println(pos5.toString());
+                    System.out.println(pos1);
+                    System.out.println(pos2);
+                    System.out.println(pos3);
+                    System.out.println(pos4);
+                    System.out.println(pos5);
                     System.out.println();
                     break;
                 case 2:
@@ -88,23 +88,23 @@ public class PoSDemo {
                     }
                     switch (choice) {
                         case 1:
-                            System.out.println(pos1.toString());
+                            System.out.println(pos1);
                             System.out.println();
                             break;
                         case 2:
-                            System.out.println(pos2.toString());
+                            System.out.println(pos2);
                             System.out.println();
                             break;
                         case 3:
-                            System.out.println(pos3.toString());
+                            System.out.println(pos3);
                             System.out.println();
                             break;
                         case 4:
-                            System.out.println(pos4.toString());
+                            System.out.println(pos4);
                             System.out.println();
                             break;
                         case 5:
-                            System.out.println(pos5.toString());
+                            System.out.println(pos5);
                             System.out.println();
                             break;
                     }
